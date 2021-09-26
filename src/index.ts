@@ -6,17 +6,28 @@
 
 //short version
 class Sorter {
-  constructor(public collection: number[]) {}
+  constructor(public collection: number[] | string) {}
 
   sort(): void {
     const { length } = this.collection;
 
     for (let i = 0; i < length; i++) {
       for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection[j] > this.collection[j + 1]) {
-          const leftElement = this.collection[j];
-          this.collection[j] = this.collection[j + 1];
-          this.collection[j + 1] = leftElement;
+        //only if collection is array of numbers
+        //typeguard to restore access of constructor
+        if (this.collection instanceof Array) {
+          
+          if (this.collection[j] > this.collection[j + 1]) {
+            const leftElement = this.collection[j];
+            this.collection[j] = this.collection[j + 1];
+            this.collection[j + 1] = leftElement;
+          }
+        }
+
+        //only if collection string
+        //typeguard restore access f/primitives, number, string, bool
+        if(typeof this.collection=== 'string'){
+          
         }
       }
     }
