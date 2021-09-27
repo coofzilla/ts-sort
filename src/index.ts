@@ -3,9 +3,10 @@
 //config rootdir/outdir
 //run tsc -w
 //config concurrently script in package.json
+import { Sorter } from './Sorter';
+import { NumbersCollection } from './NumbersCollection';
 
-
-
-const sorter = new Sorter([10, 5, 2, -2]);
+const numbersCollection = new NumbersCollection([10, 31, -32, 0]);
+const sorter = new Sorter(numbersCollection);
 sorter.sort();
-console.log(sorter.collection);
+console.log(numbersCollection.data);
