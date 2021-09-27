@@ -6,7 +6,7 @@
 import { Sorter } from './Sorter';
 import { NumbersCollection } from './NumbersCollection';
 
-const numbersCollection = new NumbersCollection([10, 31, -32, 0]);
+const numbersCollection = new NumbersCollection([120, 31, -32, 0,]);
 const sorter = new Sorter(numbersCollection);
 sorter.sort();
 console.log(numbersCollection.data);
